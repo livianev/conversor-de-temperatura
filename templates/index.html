@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <title>Conversor de temperatura</title>
+</head>
+
+<header>
+    <h1>Conversor de Temperatura</h1>
+</header>
+
+<body>
+    <main>
+        <section class="caixa">
+        <div class="container">
+
+            <form method="post">
+                <label for="celsius">Temperatura em Celsius:</label>
+                <input type="number" name="celsius">
+                <button type="submit">Converter</button>
+            </form>
+
+            {% if fahrenheit is not none and kelvin is not none %}
+            <div class="resultados">
+            <p>fahrenheit: {{fahrenheit}} °F</p>
+            <p>Kelvin: {{kelvin}} K</p>
+            </div>
+            <div id="result"></div>
+            {% endif %}
+        </div>
+        </section>
+    </main>
+
+
+</body>
+
+</html>
